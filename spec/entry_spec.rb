@@ -3,32 +3,43 @@ require_relative '../lib/entry'
 
 RSpec.describe Entry do
 
-  before do
-
-  end
-
   context 'basic operations' do
+    before do
+      @entry = Entry.new '/about'
+    end
+
+    describe 'initialisation' do
+      it 'should have no views' do
+        expect(@entry.views).to be(0)
+      end
+    end
+
     describe 'add entry' do
       it 'should add a new page view to the entry' do
-        fail 'not implemented'
+        @entry.add_view '016.464.657.359'
+        expect(@entry.views).to be(1)
       end
     end
 
     describe 'get_path' do
       it 'should get the path of the entry' do
-        fail 'not implemented'
+        expect(@entry.path).to be('/about')
       end
     end
 
     describe 'get_views' do
       it 'should get the number of views of the entry' do
-        fail 'not implemented'
+        @entry.add_view '016.464.657.359'
+        @entry.add_view '016.464.657.359'
+        expect(@entry.views).to be(2)
       end
     end
 
     describe 'get_unique' do
       it 'should get the number of unique views of the entry' do
-        fail 'not implemented'
+        @entry.add_view '016.464.657.359'
+        @entry.add_view '016.464.657.359'
+        expect(@entry.views).to be(1)
       end
     end
   end
