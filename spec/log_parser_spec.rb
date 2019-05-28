@@ -42,11 +42,11 @@ RSpec.describe LogParser do
 
     it 'returns the entries ordered by most views descending' do
       expect(@parser.visits[0].views).to be(14)
-      expect(@parser.visits[0].path).to be('/contact')
+      expect(@parser.visits[0].path).to eq('/contact')
       expect(@parser.visits[1].views).to be(10)
-      expect(@parser.visits[1].path).to be('/about')
+      expect(@parser.visits[1].path).to eq('/about')
       expect(@parser.visits[2].views).to be(8)
-      expect(@parser.visits[2].path).to be('/about2')
+      expect(@parser.visits[2].path).to eq('/about/2')
     end
   end
 
@@ -63,11 +63,11 @@ RSpec.describe LogParser do
 
     it 'returns the entries ordered by most unique views descending' do
       expect(@parser.unique_views[0].unique).to be(3)
-      expect(@parser.unique_views[0].path).to be('/about/2')
+      expect(@parser.unique_views[0].path).to eq('/about/2')
       expect(@parser.unique_views[1].unique).to be(2)
-      expect(@parser.unique_views[1].path).to be('/about')
+      expect(@parser.unique_views[1].path).to eq('/about')
       expect(@parser.unique_views[2].unique).to be(1)
-      expect(@parser.unique_views[2].path).to be('/contact')
+      expect(@parser.unique_views[2].path).to eq('/contact')
     end
   end
 

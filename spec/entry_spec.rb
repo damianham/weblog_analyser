@@ -23,7 +23,7 @@ RSpec.describe Entry do
 
     describe 'get_path' do
       it 'should get the path of the entry' do
-        expect(@entry.path).to be('/about')
+        expect(@entry.path).to eq('/about')
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.describe Entry do
       it 'should get the number of unique views of the entry' do
         @entry.add_view '016.464.657.359'
         @entry.add_view '016.464.657.359'
-        expect(@entry.views).to be(1)
+        expect(@entry.unique).to be(1)
       end
     end
   end
