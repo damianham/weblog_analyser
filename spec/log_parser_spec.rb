@@ -18,7 +18,7 @@ RSpec.describe LogParser do
     end
   end
 
-  describe 'get the entries' do
+  describe '#entries' do
     let (:parser) { LogParser.new 'fixtures/most_views.log' }
 
     it 'returns all entries' do
@@ -26,7 +26,7 @@ RSpec.describe LogParser do
     end
   end
 
-  describe 'number of views' do
+  describe '#views' do
     let (:parser) { LogParser.new 'fixtures/most_views.log' }
 
     it 'returns the number of views for each path' do
@@ -45,7 +45,7 @@ RSpec.describe LogParser do
     end
   end
 
-  describe 'unique views' do
+  describe '#unique' do
     let (:parser) { LogParser.new 'fixtures/unique_views.log' }
 
     it 'returns the number of unique views for each path' do

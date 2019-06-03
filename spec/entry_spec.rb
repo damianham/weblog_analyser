@@ -11,20 +11,20 @@ RSpec.describe Entry do
       end
     end
 
-    describe 'add entry' do
+    describe '#add_view' do
       it 'should add a new page view to the entry' do
         entry.add_view '016.464.657.359'
         expect(entry.views).to be(1)
       end
     end
 
-    describe 'get_path' do
+    describe '#path' do
       it 'should get the path of the entry' do
         expect(entry.path).to eq('/about')
       end
     end
 
-    describe 'get_views' do
+    describe '#views' do
       it 'should get the number of views of the entry' do
         entry.add_view '016.464.657.359'
         entry.add_view '016.464.657.359'
@@ -32,7 +32,7 @@ RSpec.describe Entry do
       end
     end
 
-    describe 'get_unique' do
+    describe '#unique' do
       it 'should get the number of unique views of the entry' do
         entry.add_view '016.464.657.359'
         entry.add_view '016.464.657.359'

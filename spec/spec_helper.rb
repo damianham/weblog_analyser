@@ -10,6 +10,8 @@ RSpec.configure do |config|
   end
 
   config.expect_with :rspec do |expectations|
+    # only accept expect syntax not should
+    expectations.syntax = :expect
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
     # defined using `chain`, e.g.:
