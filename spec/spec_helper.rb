@@ -1,15 +1,12 @@
-
-
-REQUIRED_ENV_VARS = %w()
+REQUIRED_ENV_VARS = %w[].freeze
 RSpec.configure do |config|
   config.before(:suite) do
     REQUIRED_ENV_VARS.each do |env_var|
-      fail "'#{env_var}' is not set, tests will fail!!" unless ENV[env_var]
+      raise "'#{env_var}' is not set, tests will fail!!" unless ENV[env_var]
     end
   end
 
   config.before(:each) do
-    
   end
 
   config.expect_with :rspec do |expectations|

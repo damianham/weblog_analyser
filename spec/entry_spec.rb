@@ -2,7 +2,6 @@ require 'spec_helper'
 require_relative '../lib/entry'
 
 RSpec.describe Entry do
-
   context 'basic operations' do
     before do
       @entry = Entry.new '/about'
@@ -43,5 +42,4 @@ RSpec.describe Entry do
       end
     end
   end
-
 end
